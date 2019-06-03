@@ -2,8 +2,11 @@ package gym;
 
 import facilities.Memberships;
 
+import java.util.Date;
+
 public class Employees extends Person {
     private int employee_salary;
+    private Date joining_date;
     Memberships m1= new Memberships();
 
     public Employees() {
@@ -20,6 +23,14 @@ public class Employees extends Person {
         this.m1 = m1;
     }
 
+    public Date getJoining_date() {
+        return joining_date;
+    }
+
+    public void setJoining_date(Date joining_date) {
+        this.joining_date = joining_date;
+    }
+
     public int getEmployee_salary() {
         return employee_salary;
     }
@@ -30,7 +41,8 @@ public class Employees extends Person {
 
     @Override
     public void display() {
-        System.out.println("------------Employee Data------------");
+
+        System.out.println("Employee Joining Date : "+this.joining_date);
         System.out.println("Salary : "+this.employee_salary);
 
     }

@@ -6,7 +6,7 @@ public class Person implements IDisplay {
     private int person_id;
     private String person_first_name;
     private String person_second_name;
-    private int person_contact;
+    private long person_contact;
     private String person_email;
 
     public Person() {
@@ -45,11 +45,11 @@ public class Person implements IDisplay {
         this.person_second_name = person_second_name;
     }
 
-    public int getPerson_contact() {
+    public long getPerson_contact() {
         return person_contact;
     }
 
-    public void setPerson_contact(int person_contact) {
+    public void setPerson_contact(long person_contact) {
         this.person_contact = person_contact;
     }
 
