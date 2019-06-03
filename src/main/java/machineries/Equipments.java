@@ -1,4 +1,8 @@
 package machineries;
 
-public class Equipments {
+public interface Equipments {
+    public void gymnasium();
+    public void cardio();
+    public void sona();
+    public void swimmingPool();
 }

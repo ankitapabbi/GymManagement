@@ -1,4 +1,4 @@
 package gym;
 
-public class Manager {
+public class Manager extends Employees {
 }

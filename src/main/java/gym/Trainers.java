@@ -1,4 +1,4 @@
 package gym;
 
-public class Trainers {
+public class Trainers extends Employees {
 }

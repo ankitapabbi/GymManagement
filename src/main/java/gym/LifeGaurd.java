@@ -1,4 +1,4 @@
 package gym;
 
-public class LifeGaurd {
+public class LifeGaurd extends Employees {
 }
