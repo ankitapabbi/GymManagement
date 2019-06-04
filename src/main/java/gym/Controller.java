@@ -4,6 +4,7 @@ import facilities.*;
 import other.CustomerSingleton;
 import other.EmployeeSingleton;
 import other.PersonSingleton;
+import userDefineExceptions.MyExceptionOne;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -117,7 +118,7 @@ public class Controller {
                     System.out.println("---------------------------------------");
                     System.out.println("GOLD");
                     int price1 = gold.gold_price;
-                    System.out.println("Price Of Membership : " + price);
+                    System.out.println("Price Of Membership : " + price1);
                     System.out.println("=======================================");
                     System.out.println("Facilities With Respective Membership :");
                     System.out.println("=======================================");
@@ -127,7 +128,7 @@ public class Controller {
                     System.out.println("---------------------------------------");
                     System.out.println("PLATINUM");
                     int price2 = platinum.platinum_price;
-                    System.out.println("Price Of Membership : " + price);
+                    System.out.println("Price Of Membership : " + price2);
                     System.out.println("=======================================");
                     System.out.println("Facilities With Respective Membership :");
                     System.out.println("=======================================");
@@ -138,7 +139,7 @@ public class Controller {
                     System.out.println("---------------------------------------");
                     System.out.println("DIAMOND");
                     int price3 = diamond.diamond_price;
-                    System.out.println("Price Of Membership : " + price);
+                    System.out.println("Price Of Membership : " + price3);
                     System.out.println("=======================================");
                     System.out.println("Facilities With Respective Membership :");
                     System.out.println("=======================================");
@@ -273,6 +274,7 @@ public class Controller {
                     case 1: {
                         int price = silver.silver_price;
                         System.out.println("Price Of Membership : " + price);
+                        System.out.println("//-----------------------------------------------------------");
                         silver.gymnasium();
                         System.out.println("------------Employee Data------------");
                         System.out.println("Available Employees : Manager, Trainer");
@@ -289,7 +291,9 @@ public class Controller {
                     case 2: {
                         int price = gold.gold_price;
                         System.out.println("Price Of Membership : " + price);
+                        System.out.println("//-----------------------------------------------------------");
                         gold.gymnasium();
+                        System.out.println("//-----------------------------------------------------------");
                         gold.cardio();
                         System.out.println("------------Employee Data------------");
                         System.out.println("Available Employees : Manager, Trainer");
@@ -306,8 +310,11 @@ public class Controller {
                     case 3: {
                         int price = platinum.platinum_price;
                         System.out.println("Price Of Membership : " + price);
+                        System.out.println("//-----------------------------------------------------------");
                         platinum.gymnasium();
+                        System.out.println("//-----------------------------------------------------------");
                         platinum.cardio();
+                        System.out.println("//-----------------------------------------------------------");
                         platinum.sona();
                         System.out.println("------------Employee Data------------");
                         System.out.println("Available Employees : Manager, Trainer");
@@ -324,9 +331,13 @@ public class Controller {
                     case 4: {
                         int price = diamond.diamond_price;
                         System.out.println("Price Of Membership : " + price);
+                        System.out.println("//-----------------------------------------------------------");
                         diamond.gymnasium();
+                        System.out.println("//-----------------------------------------------------------");
                         diamond.cardio();
+                        System.out.println("//-----------------------------------------------------------");
                         diamond.sona();
+                        System.out.println("//-----------------------------------------------------------");
                         diamond.swimmingPool();
                         System.out.println("------------Employee Data------------");
                         System.out.println("Available Employees : Manager, Trainer, Life Guard");
@@ -363,9 +374,15 @@ public class Controller {
 //            SimpleDateFormat sdf1= new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
 //            String dateJoin = "31-08-1982 10:20:56";
 //            customers.setCustomer_date_joined(dateJoin);
-                customers.display();
+                //customers.display();
 
 
+            }else {
+                try {
+                    throw new MyExceptionOne();
+                } catch (MyExceptionOne myExceptionOne) {
+                    myExceptionOne.printStackTrace();
+                }
             }
 //----------------------------------------------------------------------------------------------------------------
         }
