@@ -77,4 +77,13 @@ public class Person implements IDisplay {
         System.out.println("Contact Number : "+this.person_contact);
         System.out.println("Email Address : "+this.person_email);
     }
+
+    @Override
+    public String toString() {
+        return "Id : " + person_id +"\n"+
+                "First Name : " + person_first_name + "\n" +
+                "Second Name : " + person_second_name +  "\n" +
+                "Contact : " + person_contact + "\n" +
+                "Email : " + person_email ;
+    }
 }

@@ -7,6 +7,8 @@ import java.util.Date;
 public class Customers extends Person{
     private Date customer_date_joined;
     private String customer_address;
+    private int customer_id;
+
 
     public Customers() {
     }
@@ -15,10 +17,20 @@ public class Customers extends Person{
         super(person_id, person_first_name, person_second_name, person_contact, person_email);
     }
 
-    public Customers(int person_id, String person_first_name, String person_second_name, int person_contact, String person_email, Date customer_date_joined, String customer_address) {
+    public Customers(int person_id, String person_first_name, String person_second_name, int person_contact, String person_email, Date customer_date_joined, String customer_address, int customer_id) {
         super(person_id, person_first_name, person_second_name, person_contact, person_email);
         this.customer_date_joined = customer_date_joined;
         this.customer_address = customer_address;
+        this.customer_id = customer_id;
+    }
+
+
+    public int getCustomer_id() {
+        return customer_id;
+    }
+
+    public void setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
     }
 
     public Date  getCustomer_date_joined() {
@@ -36,6 +48,7 @@ public class Customers extends Person{
     public void setCustomer_address(String customer_address) {
         this.customer_address = customer_address;
     }
+
 
     @Override
     public void display() {
