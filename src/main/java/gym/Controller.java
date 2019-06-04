@@ -163,9 +163,19 @@ public class Controller {
 
            // memberships.setEnd_date();
             customers.setCustomer_address("2 Edenmills Drive, Scarborough");
-            SimpleDateFormat sdf1= new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
+
+            SimpleDateFormat sdf3= new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
             String dateJoin = "31-08-1982 10:20:56";
-            customers.setCustomer_date_joined(dateJoin);
+
+            try {
+                Date s1 = sdf3.parse(dateJoin);
+                customers.setCustomer_date_joined(s1);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+//            SimpleDateFormat sdf1= new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
+//            String dateJoin = "31-08-1982 10:20:56";
+//            customers.setCustomer_date_joined(dateJoin);
             customers.display();
 
 
