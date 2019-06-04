@@ -12,6 +12,15 @@ public class Person implements IDisplay {
     public Person() {
     }
 
+    /**
+     *
+     * @param person_id
+     * @param person_first_name
+     * @param person_second_name
+     * @param person_contact
+     * @param person_email
+     */
+
     public Person(int person_id, String person_first_name, String person_second_name, int person_contact, String person_email) {
         this.person_id = person_id;
         this.person_first_name = person_first_name;

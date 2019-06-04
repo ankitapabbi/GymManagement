@@ -44,15 +44,15 @@ public class Controller {
             switch (option){
                 case 1:{
                     Employees employee1 = new Employees(1, "Ankita", "Pabbi", 2111187596,
-                            "erankitapabbi@gmail.com", 01, 1000000, s1);
+                            "erankitapabbi@gmail.com", 01, 1000000, s1,"Manager");
                     Employees employee2 = new Employees(2, "Udhay", "Mahajan", 2145879636,
-                            "udhay@gmail.com", 02, 200000, s1);
+                            "udhay@gmail.com", 02, 200000, s1,"Life Guard");
                     Employees employee3 = new Employees(3, "Ujwal", "Arora", 2136547895,
-                            "ujwal@gmail.com", 03, 10000, s1);
+                            "ujwal@gmail.com", 03, 10000, s1,"Trainer");
                     Employees employee4 = new Employees(4, "Netra", "Dhariyal", 2117859656,
-                            "netra@gmail.com", 04, 35000, s1);
+                            "netra@gmail.com", 04, 35000, s1,"Trainer");
                     Employees employee5 = new Employees(5, "Vishal", "Pabbi", 211369897,
-                            "vishal@gmail.com", 05, 500000, s1);
+                            "vishal@gmail.com", 05, 500000, s1,"Trainer");
 
                     EmployeeSingleton.getInstance().addEmployee(employee1);
                     EmployeeSingleton.getInstance().addEmployee(employee2);
@@ -64,9 +64,12 @@ public class Controller {
                     int employee_id = scanner.nextInt();
 
                     Employees tempPerson = EmployeeSingleton.getInstance().getEmployeeByID(employee_id);
+                   // Person tt= PersonSingleton.getInstance().getStudentByID()
                     if (tempPerson != null) {
                         System.out.println("------------Employee Data------------");
                         System.out.println(tempPerson.toString());
+                       // employees.toString();
+                        System.out.println("Post : "+tempPerson.getPost());
                     } else {
                         System.out.println("Record not found!!!");
                     }
@@ -183,15 +186,16 @@ public class Controller {
                     //-----------------------------------------------------------------------
 
                     Employees employee1 = new Employees(1, "Ankita", "Pabbi", 2111187596,
-                            "erankitapabbi@gmail.com", 01, 1000000, s1);
+                            "erankitapabbi@gmail.com", 01, 1000000, s1,"Manager");
                     Employees employee2 = new Employees(2, "Udhay", "Mahajan", 2145879636,
-                            "udhay@gmail.com", 02, 200000, s1);
+                            "udhay@gmail.com", 02, 200000, s1,"Life Guard");
                     Employees employee3 = new Employees(3, "Ujwal", "Arora", 2136547895,
-                            "ujwal@gmail.com", 03, 10000, s1);
+                            "ujwal@gmail.com", 03, 10000, s1,"Trainer");
                     Employees employee4 = new Employees(4, "Netra", "Dhariyal", 2117859656,
-                            "netra@gmail.com", 04, 35000, s1);
+                            "netra@gmail.com", 04, 35000, s1,"Trainer");
                     Employees employee5 = new Employees(5, "Vishal", "Pabbi", 211369897,
-                            "vishal@gmail.com", 05, 500000, s1);
+                            "vishal@gmail.com", 05, 500000, s1,"Trainer");
+
 
                     EmployeeSingleton.getInstance().addEmployee(employee1);
                     EmployeeSingleton.getInstance().addEmployee(employee2);
@@ -229,6 +233,7 @@ public class Controller {
                 person.setPerson_second_name("Mahajan");
                 person.setPerson_email("udhaymahajan0@gmail.com");
 
+
                 person.display();
 
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
@@ -242,6 +247,7 @@ public class Controller {
                     e.printStackTrace();
                 }
                 employees.setEmployee_salary(1000000);
+                employees.setPost("Life Guard");
                 employees.display();
 
             } else if (userType.equals("Customer")) {
@@ -371,10 +377,7 @@ public class Controller {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-//            SimpleDateFormat sdf1= new SimpleDateFormat("dd-m-yyyy hh:mm:ss");
-//            String dateJoin = "31-08-1982 10:20:56";
-//            customers.setCustomer_date_joined(dateJoin);
-                //customers.display();
+
             }else {
                 try {
                     throw new MyExceptionOne();
@@ -384,5 +387,16 @@ public class Controller {
             }
 //----------------------------------------------------------------------------------------------------------------
         }
+
+//        System.out.println("Do You Want To Fetch More Information : (y/n)");
+//        String choice = scanner.next();
+//
+//        if((choice=="y")||(choice=="Y")){
+//        Controller.main(null);
+//
+//        }else if((choice=="y")||(choice=="Y")){
+//            System.exit(0);
+//        }
+
     }
 }

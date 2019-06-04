@@ -17,6 +17,17 @@ public class Customers extends Person{
         super(person_id, person_first_name, person_second_name, person_contact, person_email);
     }
 
+    /**
+     *
+     * @param person_id
+     * @param person_first_name
+     * @param person_second_name
+     * @param person_contact
+     * @param person_email
+     * @param customer_date_joined
+     * @param customer_address
+     * @param customer_id
+     */
     public Customers(int person_id, String person_first_name, String person_second_name, int person_contact, String person_email, Date customer_date_joined, String customer_address, int customer_id) {
         super(person_id, person_first_name, person_second_name, person_contact, person_email);
         this.customer_date_joined = customer_date_joined;
