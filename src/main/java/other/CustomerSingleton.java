@@ -40,4 +40,15 @@ public class CustomerSingleton {
 
         return null;
     }
+    public Customers getCustomers()
+    {
+
+        for(Customers s : customersArrayList)
+        {
+             System.out.println(customersArrayList+"\n");
+        }
+
+
+        return null;
+    }
 }

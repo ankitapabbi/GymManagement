@@ -25,7 +25,10 @@ public class Controller {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Press 1 for All data");
+        System.out.println("Hello !!!");
+        System.out.println("Welcome To Our Project : GYM MANAGEMENT ");
+
+        System.out.println("Press 1 for Multiple Records");
         int mainOption = scanner.nextInt();
 
         if(mainOption==1){
@@ -33,6 +36,8 @@ public class Controller {
             System.out.println("1 For Employees Details");
             System.out.println("2 For Customer Details");
             System.out.println("3 For Membership Details");
+            System.out.println("4 For All Customers");
+            System.out.println("5 For All Employees");
             int option = scanner.nextInt();
 
             switch (option){
@@ -54,15 +59,17 @@ public class Controller {
                     EmployeeSingleton.getInstance().addEmployee(employee4);
                     EmployeeSingleton.getInstance().addEmployee(employee5);
 
-                    System.out.println("Enter the Employee Id : ");
+                    System.out.println("Enter the Employee Id : (1,2,3,4,5)");
                     int employee_id = scanner.nextInt();
 
                     Employees tempPerson = EmployeeSingleton.getInstance().getEmployeeByID(employee_id);
                     if (tempPerson != null) {
+                        System.out.println("------------Employee Data------------");
                         System.out.println(tempPerson.toString());
                     } else {
-                        System.out.println("Record Not exist");
+                        System.out.println("Record not found!!!");
                     }
+                    System.out.println("----------------------------------------");
                     break;
                 }
                 case 2:{
@@ -83,15 +90,17 @@ public class Controller {
                     CustomerSingleton.getInstance().addCustomer(customer4);
                     CustomerSingleton.getInstance().addCustomer(customer5);
 
-                    System.out.println("Enter the Customer Id : ");
+                    System.out.println("Enter the Customer Id : (1,2,3,4,5)");
                     int customer_id = scanner.nextInt();
 
                     Customers tempPerson = CustomerSingleton.getInstance().getCustomerByID(customer_id);
                     if (tempPerson != null) {
+                        System.out.println("------------Customer Data------------");
                         System.out.println(tempPerson.toString());
                     } else {
-                        System.out.println("Record NOt exist");
+                        System.out.println("Record not found!!!");
                     }
+                    System.out.println("----------------------------------------");
                     break;
                 }
                 case 3:{
@@ -138,6 +147,61 @@ public class Controller {
                     diamond.sona();
                     diamond.swimmingPool();
 
+                }
+                case 4:{
+
+                    System.out.println("Customers enrolled:");
+                    System.out.println("----------------------------------------------------");
+                    //-------------------------------------------
+                    Customers customer1 = new Customers(6,"Diksha","Sharma",23111111,
+                            "diksha1@gmail.com",s1,"Keeler Blvd",1);
+                    Customers customer2 = new Customers(7,"Roshni","Kapoor",1231158111,
+                            "roshni@gmail.com",s1,"Shorting Road",2);
+                    Customers customer3 = new Customers(8,"Irban","Kaur",32578954,
+                            "irban@gmail.com",s1,"Millner AV",3);
+                    Customers customer4 = new Customers(9,"Lavish","Khullar",845213697,
+                            "lavishkhullar@gmail.com",s1,"Brain Drive",4);
+                    Customers customer5 = new Customers(10,"Ritik","Arora",754811111,
+                            "ritik@gmail.com",s1,"Neilson Road",5);
+
+                    CustomerSingleton.getInstance().addCustomer(customer1);
+                    CustomerSingleton.getInstance().addCustomer(customer2);
+                    CustomerSingleton.getInstance().addCustomer(customer3);
+                    CustomerSingleton.getInstance().addCustomer(customer4);
+                    CustomerSingleton.getInstance().addCustomer(customer5);
+                    //-------------------------------------------
+
+                   for(int i =1 ;i<=5;i++){
+                       System.out.println(CustomerSingleton.getInstance().getCustomerByID(i)+"\n");
+                   }
+                    break;
+                }
+                case 5:{
+                    System.out.println("Our Employees :");
+                    System.out.println("----------------------------------------------------");
+                    //-----------------------------------------------------------------------
+
+                    Employees employee1 = new Employees(1, "Ankita", "Pabbi", 2111187596,
+                            "erankitapabbi@gmail.com", 01, 1000000, s1);
+                    Employees employee2 = new Employees(2, "Udhay", "Mahajan", 2145879636,
+                            "udhay@gmail.com", 02, 200000, s1);
+                    Employees employee3 = new Employees(3, "Ujwal", "Arora", 2136547895,
+                            "ujwal@gmail.com", 03, 10000, s1);
+                    Employees employee4 = new Employees(4, "Netra", "Dhariyal", 2117859656,
+                            "netra@gmail.com", 04, 35000, s1);
+                    Employees employee5 = new Employees(5, "Vishal", "Pabbi", 211369897,
+                            "vishal@gmail.com", 05, 500000, s1);
+
+                    EmployeeSingleton.getInstance().addEmployee(employee1);
+                    EmployeeSingleton.getInstance().addEmployee(employee2);
+                    EmployeeSingleton.getInstance().addEmployee(employee3);
+                    EmployeeSingleton.getInstance().addEmployee(employee4);
+                    EmployeeSingleton.getInstance().addEmployee(employee5);
+                    //-----------------------------------------------------------------------------
+                    for(int i =1 ;i<=5;i++){
+                        System.out.println(EmployeeSingleton.getInstance().getEmployeeByID(i)+"\n");
+                    }
+                    break;
                 }
                 default:{
                     System.out.println("Wrong Choice !!! Please try again");
