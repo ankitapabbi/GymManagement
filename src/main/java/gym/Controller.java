@@ -375,8 +375,6 @@ public class Controller {
 //            String dateJoin = "31-08-1982 10:20:56";
 //            customers.setCustomer_date_joined(dateJoin);
                 //customers.display();
-
-
             }else {
                 try {
                     throw new MyExceptionOne();
